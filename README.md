@@ -33,17 +33,20 @@ export AZURE_KEY_VAULT_URL=""
 
 3. Run the CLI:
 ```
-$ ./bin/azure-kv-cli help     
+Usage:
 Azure Key Vault cli application
 
 Usage:
   azure-kv-cli [command]
 
 Available Commands:
-  completion  Generate the autocompletion script for the specified shell
-  help        Help about any command
-  readSecret  Read Key Vault Secret
-  readSecrets Read Key Vault Secret
+  completion     Generate the autocompletion script for the specified shell
+  help           Help about any command
+  listSecrets    List all Key Vault Secrets
+  migrateSecrets Migrate Key Vault Secrets
+  readSecret     Read Key Vault Secret
+  readSecrets    Read Key Vault Secrets
+  setSecret      Set Key Vault Secret
 
 Flags:
   -h, --help     help for azure-kv-cli

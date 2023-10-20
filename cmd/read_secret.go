@@ -2,9 +2,9 @@ package cmd
 
 import (
 	"log"
-	"os"
 
 	"github.com/povarna/azure-kv-cli/azure_key_vault"
+	"github.com/povarna/azure-kv-cli/env"
 	"github.com/spf13/cobra"
 )
 
@@ -15,23 +15,19 @@ var readSecretCmd = &cobra.Command{
 For example:
 azure_key_vault readSecret -s <secret_key> -v <secret_version>`,
 
-	Run: readKeyVaultSecret,
+	Run: listKeyVaultSecrets,
 }
 
 func init() {
 	rootCmd.AddCommand(readSecretCmd)
-	readSecretCmd.Flags().StringP("secret", "s", "", "Secret Key")
+	readSecretCmd.Flags().StringP("secretKey", "k", "", "Secret Key")
 	readSecretCmd.Flags().StringP("version", "v", "", "Secret Version")
 }
 
 func readKeyVaultSecret(cmd *cobra.Command, args []string) {
-	vaultUrl := os.Getenv("AZURE_KEY_VAULT_URL")
+	vaultUrl := env.GetKeyVaultUrl("AZURE_KEY_VAULT_URL")
 
-	if len(vaultUrl) == 0 {
-		log.Fatal("AZURE_KEY_VAULT_URL env variable is empty!")
-	}
-
-	secret, _ := cmd.Flags().GetString("secret")
+	secret, _ := cmd.Flags().GetString("secretKey")
 	if len(secret) == 0 {
 		log.Fatal("No secret key provided")
 	}
