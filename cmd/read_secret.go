@@ -15,7 +15,7 @@ var readSecretCmd = &cobra.Command{
 For example:
 azure_key_vault readSecret -s <secret_key> -v <secret_version>`,
 
-	Run: listKeyVaultSecrets,
+	Run: readKeyVaultSecret,
 }
 
 func init() {

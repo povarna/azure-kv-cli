@@ -12,7 +12,7 @@ Build
 $ go build -o bin/azure-kv-cli
 ```
 
-If you want to use the cli directly from the `$GOPATH/bin` path:
+Use the cli directly from the `$GOPATH/bin` path:
 ```
 $ go build
 $ go install
