@@ -54,3 +54,6 @@ Flags:
 
 Use "azure-kv-cli [command] --help" for more information about a command.
 ```
+
+Go Lang SDK Source:
+https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azsecrets#pkg-examples
